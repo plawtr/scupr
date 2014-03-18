@@ -7,11 +7,11 @@ class Ad < ActiveRecord::Base
   belongs_to :business
 
   def bucket_image
-  	image.url(:thumb).split("?").first
+  	image.url(:thumb) # .split("?").first
   end
 
   def full_image
-    image.url(:medium).split("?").first
+    image.url(:medium) # .split("?").first
   end
 
   def as_json
