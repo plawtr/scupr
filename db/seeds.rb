@@ -10,12 +10,12 @@ businesses = Business.create([{name: 'Ozone'}, {name: 'Salvation Jane'}, {name: 
 
 ads = Ad.create([      {image: File.open(Rails.root.join("tmp/img/1.jpg")), 
 									    caption: 'Ozone open for business', 
-									business_id: 1}, 
+									business_id: Business.find_by(name: "Ozone").id}, 
 								       {image: File.open(Rails.root.join("tmp/img/2.jpg")), 
 									    caption: 'Salvation Jane open for business', 
-									business_id: 2}, 
+									business_id: Business.find_by(name: "Salvation Jane").id}, 
 								       {image: File.open(Rails.root.join("tmp/img/3.jpg")), 
 									    caption: 'Pod open for business', 
-									business_id: 3}]) 
+									business_id: Business.find_by(name: "Pod").id}]) 
 
 

@@ -58,8 +58,8 @@ production:
   encoding: unicode
   database: scupr_production
   pool: 5
-  username: scupr
-  password:
+  # username: scupr
+  # password:
 
 cucumber:
   <<: *test
