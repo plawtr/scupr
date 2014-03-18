@@ -5,8 +5,10 @@ class AdsController < ApplicationController
   			:ads => @ads.as_json }
 	end
 
-end
+	def show
+		@ad = Ad.find_by_id(params[:id])
+  	render :json => { 
+  			:ad => @ad.as_json }
+	end
 
-__END__
-{ :success => true, 
-  :user => @user.as_json(:only => [:email]) }
+end

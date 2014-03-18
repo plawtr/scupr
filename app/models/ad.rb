@@ -10,8 +10,12 @@ class Ad < ActiveRecord::Base
   	image.url(:thumb).split("?").first
   end
 
+  def full_image
+    image.url(:medium).split("?").first
+  end
+
   def as_json
-  	{id: id, image: bucket_image}
+  	{id: id, bucket_image: bucket_image, image: full_image, caption: caption, business_name: business.name}
   end
   
 end

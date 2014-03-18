@@ -1,4 +1,4 @@
-Feature: Show json ads in on the ads page
+Feature: Show bucket json data on the ads page
 
 Background:
 	Given a business exists
@@ -6,16 +6,11 @@ Background:
 Scenario: Show one ad
 	And it has an ad
 	When I request all ads
-	Then I receive:
-	"""
-	{"ads":[{"id":1,"image":"/system/ads/images/000/000/001/thumb/1.jpg"}]}
-	"""
+	Then I receive a json ad
+
 
 Scenario: Show two ads from one business
 	And it has an ad
 	And it has another ad
 	When I request all ads
-	Then I receive:
-	"""
-	{"ads":[{"id":2,"image":"/system/ads/images/000/000/002/thumb/1.jpg"},{"id":3,"image":"/system/ads/images/000/000/003/thumb/2.jpg"}]}
-	"""
+	Then I receive all json ads
