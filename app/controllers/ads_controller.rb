@@ -1,6 +1,7 @@
 class AdsController < ApplicationController
+	
 	def index
-		@ads = Ad.all
+		@ads = params[:coords] ? Ad.all.select{|ad| ad.business.serves?(user_GPS)} : Ad.all
   	render :json => { 
   			:ads => @ads.as_json }
 	end
@@ -11,4 +12,10 @@ class AdsController < ApplicationController
   			:ad => @ad.as_json }
 	end
 
+private
+	def user_GPS
+		coords = params[:coords]
+		{lng: coords[:longitude], lat: coords[:latitude]}
+	end
 end
+

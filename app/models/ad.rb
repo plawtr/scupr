@@ -15,7 +15,7 @@ class Ad < ActiveRecord::Base
   end
 
   def as_json
-  	{id: id, bucket_image: bucket_image, image: full_image, caption: caption, business_name: business.name}
+  	{id: id, bucket_image: bucket_image, image: full_image, caption: caption, business_name: business.name, business_GPS: {lat: business.lat, lng: business.lng}}
   end
   
 end
