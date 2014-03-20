@@ -1,18 +1,20 @@
 class AdsController < ApplicationController
 	
 	def index
-		@ads = params[:coords] ? Ad.all.select{|ad| ad.business.serves?(user_GPS)} : Ad.all
-  	render :json => { 
-  			:ads => @ads.as_json }
+		if params[:coords]
+			@ads = Ad.all.select{|ad| ad.business.serves?(user_GPS)}
+  		render :json => {	:ads => @ads.as_json(user_GPS) }
+  	else
+  		render :text => "Oops, it looks like we could not locate you! "
+  	end
 	end
 
 	def show
 		@ad = Ad.find_by_id(params[:id])
   	render :json => { 
-  			:ad => @ad.as_json }
+  			:ad => @ad.as_json(user_GPS) }
 	end
 
-private
 	def user_GPS
 		coords = params[:coords]
 		{lng: coords[:longitude], lat: coords[:latitude]}
