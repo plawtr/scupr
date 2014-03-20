@@ -8,8 +8,13 @@ class Business < ActiveRecord::Base
                    :lng_column_name => :lng
   
   def serves?(userGPS)
-  	userll = Geokit::LatLng.new(userGPS[:lat], userGPS[:lng])
-  	businessll = Geokit::LatLng.new(self.lat, self.lng)
- 		businessll.distance_to(userll) <= self.radius
+    kms_to(userGPS) <= self.radius
   end
+
+  def kms_to(userGPS)
+    userll = Geokit::LatLng.new(userGPS[:lat], userGPS[:lng])
+    businessll = Geokit::LatLng.new(self.lat, self.lng)
+    businessll.distance_to(userll)
+  end
+
 end

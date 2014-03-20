@@ -14,8 +14,12 @@ class Ad < ActiveRecord::Base
     image.url(:medium) # .split("?").first
   end
 
-  def as_json
-  	{id: id, bucket_image: bucket_image, image: full_image, caption: caption, business_name: business.name, business_GPS: {lat: business.lat, lng: business.lng}}
+  def as_json(user_GPS)
+  	{id: id, bucket_image: bucket_image, image: full_image, caption: caption, business_name: business.name, business_GPS: {lat: business.lat, lng: business.lng}, distance: business.kms_to(user_GPS)}
   end
+
+  # def as_json_for(user_GPS)
+  #   as_json.merge(distance: business.kms_to(user_GPS))
+  # end
   
 end
