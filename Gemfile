@@ -63,6 +63,7 @@ gem 'haml'
 gem "haml-rails"
 gem "paperclip", "~> 4.1"
 gem 'geokit-rails'
+gem 'exifr'
 
 group :development do
 	gem 'better_errors' 

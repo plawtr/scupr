@@ -21,5 +21,33 @@ class Ad < ActiveRecord::Base
   # def as_json_for(user_GPS)
   #   as_json.merge(distance: business.kms_to(user_GPS))
   # end
+
+  def is_mappable?
+    self.tiff_jpeg? && self.has_gps?
+  end
+
+  def tiff_jpeg?
+    ["image/jpeg", "image/tiff"].include?(self.image_content_type)
+  end
+
+  def has_gps?
+    !exif_gps.nil?
+  end
+
+  def exif_gps
+    EXIFR::JPEG.new(open(image_path)).gps
+  end
+
+  def image_path
+    self.image.url.split("?").first
+  end
+
+  def longitude
+    exif_gps.to_h[:longitude] 
+  end
+
+  def latitude
+    exif_gps.to_h[:latitude]
+  end
   
 end
