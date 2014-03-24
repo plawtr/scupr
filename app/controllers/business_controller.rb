@@ -1,13 +1,19 @@
 class BusinessController < ApplicationController
   def create
-    @business = Business.new(
+
+    @business = Business.find_or_create_by(id: params["business-id"])
+
+    @business.assign_attributes(
       name: params["business-name"], 
       lat: params["business-lat"], 
       lng: params["business-lng"], 
       radius: params["business-radius"].to_f/1000
     )
+
+    @ad = @business.ads.first
+
     if @business.save
-      @ad = Ad.new(
+      @ad.assign_attributes(
         caption: params["ad-caption"], 
         image: params["file"],
         business_id: @business.id
