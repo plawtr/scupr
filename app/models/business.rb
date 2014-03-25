@@ -17,4 +17,9 @@ class Business < ActiveRecord::Base
     businessll.distance_to(userll)
   end
 
+  def as_json
+    ad = ads.first
+    {id: id, name: name, lat: lat, lng: lng, radius: radius*1000, phone: phone, ad: { id: ad.id, bucket_image: ad.bucket_image, image: ad.full_image, caption: ad.caption}}
+  end
+
 end
