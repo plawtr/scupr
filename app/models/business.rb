@@ -19,12 +19,7 @@ class Business < ActiveRecord::Base
 
   def as_json
     ad = ads.first
-    puts ad
-    puts self.ads
-    puts self.ads.first
-    puts self
-    puts "**" * 50
-    {id: id, name: name, lat: lat, lng: lng, radius: radius*1000, ad: { id: ad.id, bucket_image: ad.bucket_image, image: ad.full_image, caption: ad.caption}}
+    {id: id, name: name, lat: lat, lng: lng, radius: radius*1000, phone: phone, ad: { id: ad.id, bucket_image: ad.bucket_image, image: ad.full_image, caption: ad.caption}}
   end
 
 end

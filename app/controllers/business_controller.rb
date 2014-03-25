@@ -7,10 +7,11 @@ class BusinessController < ApplicationController
       name: params["business-name"], 
       lat: params["business-lat"], 
       lng: params["business-lng"], 
-      radius: params["business-radius"].to_f/1000
+      radius: params["business-radius"].to_f/1000,
+      phone: params["business-phone"]
     )
 
-    @ad = @business.ads.first
+    @ad = @business.ads.first || Ad.new()
 
     if @business.save
       @ad.assign_attributes(

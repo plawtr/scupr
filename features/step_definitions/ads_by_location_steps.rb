@@ -14,7 +14,7 @@ When(/^I request all ads with my GPS data$/) do
 end
 
 Then(/^I receive one json ad$/) do
-  expect(last_response.body).to eq("{\"ads\":[{\"id\":#{@ad.id},\"bucket_image\":\"#{@ad.image.url(:thumb)}\",\"image\":\"#{@ad.image.url(:medium)}\",\"caption\":\"#{@ad.caption}\",\"business_name\":\"#{@ad.business.name}\",\"business_GPS\":{\"lat\":#{@ad.business.lat},\"lng\":#{@ad.business.lng}},\"distance\":0.00885025516103663}]}")
+  expect(last_response.body).to eq("{\"ads\":[{\"id\":#{@ad.id},\"bucket_image\":\"#{@ad.image.url(:thumb)}\",\"image\":\"#{@ad.image.url(:medium)}\",\"caption\":\"#{@ad.caption}\",\"business_name\":\"#{@ad.business.name}\",\"business_GPS\":{\"lat\":#{@ad.business.lat},\"lng\":#{@ad.business.lng}},\"distance\":0.00885025516103663,\"business_phone\":null}]}")
 end
 
 Given(/^I am outside the business radius$/) do
