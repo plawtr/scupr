@@ -63,6 +63,11 @@ gem 'haml'
 gem "haml-rails"
 gem "paperclip", "~> 4.1"
 gem 'geokit-rails'
+gem 'passbook'
+gem 'rubyzip', '>= 1.0.0'
+gem 'zip-zip'
+gem 'sign_pass', '1.0.0', :path => 'vendor/assets/gems'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 group :development do
 	gem 'better_errors' 
@@ -78,5 +83,5 @@ group :test do
   gem 'database_cleaner'
   # gem "factory_girl_rails", "~> 4.0"
   gem 'poltergeist'
-  gem 'selenium-webdriver'
+  # gem 'selenium-webdriver'
 end

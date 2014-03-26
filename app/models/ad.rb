@@ -4,6 +4,8 @@ class Ad < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   validates_presence_of :image
 
+  has_attached_file :pass
+
   belongs_to :business
 
   def bucket_image

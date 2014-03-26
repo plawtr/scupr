@@ -1,0 +1,48 @@
+{
+  "formatVersion" : 1,
+  "passTypeIdentifier" : "pass.com.yonder",
+  "serialNumber" : "p69f2J",
+  "teamIdentifier" : "WMCXL562MZ",
+  "webServiceURL" : "https://example.com/passes/",
+  "authenticationToken" : "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
+  "locations" : [
+    {
+      "longitude" : -0.087155069218721,
+      "latitude" : 51.523010500519
+    }
+  ],
+
+  "organizationName" : "Ozone Coffee",
+  "description" : "Store loyalty card",
+  "logoText" : "Уonder! Loyalty Card",
+  "foregroundColor" : "rgb(255, 255, 255)",
+  "backgroundColor" : "rgb(0, 0, 0)",
+  "storeCard" : {
+    "primaryFields" : [
+      {
+        "key" : "visits",
+        "label" : "visits",
+        "value" : 0
+      }
+    ],
+    "auxiliaryFields" : [
+      {
+        "key" : "level",
+        "label" : "LEVEL",
+        "value" : "Visitor"
+      },
+      {
+        "key" : "next",
+        "label" : "NEXT REWARD",
+        "value" : "5 visits"
+      }
+    ],
+    "backFields" : [
+      {
+        "key" : "terms",
+        "label" : "TERMS AND CONDITIONS",
+        "value" : "Уonder! and this establishment offer this pass, including all information, software, products and services available from this pass or offered as part of or in conjunction with this pass (the \"pass\"), to you, the user, conditioned upon your acceptance of all of the terms, conditions, policies and notices stated here. Уonder! and this establishment reserves the right to make changes to these Terms and Conditions immediately by posting the changed Terms and Conditions in this location.\n\nUse the pass at your own risk. This pass is provided to you \"as is,\" without warranty of any kind either express or implied. Neither Уonder! nor this establishment nor their employees, agents, third-party information providers, merchants, licensors or the like warrant that the pass or its operation will be accurate, reliable, uninterrupted or error-free. No agent or representative has the authority to create any warranty regarding the pass on behalf of Уonder! and this establishment. Уonder! and this establishment reserve the right to change or discontinue at any time any aspect or feature of the pass."
+      }
+    ]
+  }
+}
