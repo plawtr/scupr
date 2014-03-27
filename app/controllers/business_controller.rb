@@ -14,10 +14,12 @@ class BusinessController < ApplicationController
     @ad = @business.ads.first || Ad.new()
 
     if @business.save
+
       @ad.assign_attributes(
         caption: params["ad-caption"], 
         image: params["file"],
-        business_id: @business.id
+        business_id: @business.id 
+        # pass: @business.pass_for(@ad)
       )
     else 
       render :json => { :business => @business.errors.messages }
