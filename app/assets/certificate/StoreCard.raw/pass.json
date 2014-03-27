@@ -1,22 +1,26 @@
 {
   "formatVersion" : 1,
   "passTypeIdentifier" : "pass.com.yonder",
-  "serialNumber" : "p69f2J",
+  "serialNumber" : "q69f2J",
   "teamIdentifier" : "WMCXL562MZ",
   "webServiceURL" : "https://example.com/passes/",
-  "authenticationToken" : "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
+  "authenticationToken" : "uxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
   "locations" : [
     {
       "longitude" : -0.087155069218721,
       "latitude" : 51.523010500519
     }
   ],
-
-  "organizationName" : "Ozone Coffee",
-  "description" : "Store loyalty card",
-  "logoText" : "Уonder! Loyalty Card",
-  "foregroundColor" : "rgb(255, 255, 255)",
-  "backgroundColor" : "rgb(0, 0, 0)",
+  "barcode" : {
+    "message" : "123456789",
+    "format" : "PKBarcodeFormatPDF417",
+    "messageEncoding" : "iso-8859-1"
+  },
+  "organizationName" : "Ozone Coffee ･ У!",
+  "description" : "Уonder! loyalty card",
+  "logoText" : "Ozone Coffee ･ У!",
+  "foregroundColor" : "rgb(210,202,182)",
+  "backgroundColor" : "rgb(75, 57, 5)",
   "storeCard" : {
     "primaryFields" : [
       {
