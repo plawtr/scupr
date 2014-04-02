@@ -68,6 +68,7 @@ gem 'rubyzip', '>= 1.0.0'
 gem 'zip-zip'
 gem 'sign_pass', '1.0.0', :path => 'vendor/assets/gems'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'acts-as-taggable-on'
 
 group :development do
 	gem 'better_errors' 

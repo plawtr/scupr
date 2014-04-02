@@ -15,6 +15,7 @@ class BusinessController < ApplicationController
 
     if @business.save
 
+      @ad.tag_list = params["ad-tags"]
       @ad.assign_attributes(
         caption: params["ad-caption"], 
         image: params["file"],
