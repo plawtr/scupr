@@ -19,7 +19,7 @@ class Business < ActiveRecord::Base
 
   def as_json
     ad = ads.first
-    {id: id, name: name, lat: lat, lng: lng, radius: radius*1000, phone: phone, ad: { id: ad.id, bucket_image: ad.bucket_image, image: ad.full_image, caption: ad.caption}}
+    {id: id, name: name, lat: lat, lng: lng, radius: radius*1000, phone: phone, ad: { id: ad.id, bucket_image: ad.bucket_image, image: ad.full_image, caption: ad.caption, tags: ad.tag_list}}
   end
 
   # def pass_for(ad)

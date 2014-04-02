@@ -35,7 +35,7 @@ class Ad < ActiveRecord::Base
   end
 
   def as_json(user_GPS)
-  	{id: id, bucket_image: bucket_image, image: full_image, caption: caption, business_name: business.name, business_GPS: {lat: business.lat, lng: business.lng}, distance: business.kms_to(user_GPS), business_phone: business.phone, updated_ago: time_ago}
+  	{id: id, bucket_image: bucket_image, image: full_image, caption: caption, business_name: business.name, business_GPS: {lat: business.lat, lng: business.lng}, distance: business.kms_to(user_GPS), business_phone: business.phone, updated_ago: time_ago, tags: tag_list}
   end
 
 end
