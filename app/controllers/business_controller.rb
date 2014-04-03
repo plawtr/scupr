@@ -31,6 +31,11 @@ class BusinessController < ApplicationController
     else
       render :json => { :business => @business.as_json.merge(@ad.errors.messages)}
     end
-
   end
+
+  def show
+    @business = Business.find_by(id: params["id"])
+    render :json => { :business => @business.as_json }
+  end
+
 end

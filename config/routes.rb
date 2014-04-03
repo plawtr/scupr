@@ -3,7 +3,9 @@ Scupr::Application.routes.draw do
   get "business/create"
   get 'ads' => "ads#index"
   get 'ads/:id' => "ads#show"
+  get 'business/:id' => "business#show"
   post 'business/new' => "business#create"
+  
   post 'payment' => "charges#create"
   get 'tags/:tag'=> 'ads#index', as: :tag
 
