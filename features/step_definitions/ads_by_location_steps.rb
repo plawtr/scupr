@@ -14,7 +14,7 @@ When(/^I request all ads with my GPS data$/) do
 end
 
 Then(/^I receive one json ad$/) do
-  expect(last_response.body).to eq("{\"ads\":[{\"id\":#{@ad.id},\"bucket_image\":\"#{@ad.image.url(:thumb)}\",\"image\":\"#{@ad.image.url(:medium)}\",\"caption\":\"#{@ad.caption}\",\"business_name\":\"#{@ad.business.name}\",\"business_GPS\":{\"lat\":#{@ad.business.lat},\"lng\":#{@ad.business.lng}},\"distance\":0.00885025516103663,\"business_phone\":null}]}")
+  expect(last_response.body).to eq("{\"ads\":[{\"id\":#{@ad.id},\"bucket_image\":\"#{@ad.image.url(:thumb)}\",\"image\":\"#{@ad.image.url(:medium)}\",\"caption\":\"#{@ad.caption}\",\"business_id\":5,\"business_name\":\"#{@ad.business.name}\",\"business_GPS\":{\"lat\":#{@ad.business.lat},\"lng\":#{@ad.business.lng}},\"distance\":0.00885025516103663,\"business_phone\":null,\"updated_ago\":\"0s\",\"tags\":[]}]}")
 end
 
 Given(/^I am outside the business radius$/) do
@@ -46,6 +46,6 @@ Given(/^I am within two business radii$/) do
 end
 
 Then(/^I receive two json ads$/) do
-    expect(last_response.body).to eq("{\"ads\":[#{@ad1.as_json(@GPS).to_json},#{@ad2.as_json(@GPS).to_json}]}")
+    expect(last_response.body).to eq("{\"ads\":[#{@ad2.as_json(@GPS).to_json},#{@ad1.as_json(@GPS).to_json}]}")
 end
 

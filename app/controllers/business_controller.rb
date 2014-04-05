@@ -38,4 +38,15 @@ class BusinessController < ApplicationController
     render :json => { :business => @business.as_json }
   end
 
+  def create_pass
+    @business = Business.find_by(id: params["business_id"])
+    pass = @business.generate_pass 
+    render :json => { :pass_url => pass["url"].as_json } 
+  end
+
+  def create_coupon
+    @business = Business.find_by(id: params["business_id"])
+    coupon = @business.generate_coupon 
+    render :json => { :pass_url => coupon["url"].as_json } 
+  end
 end

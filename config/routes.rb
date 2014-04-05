@@ -1,13 +1,16 @@
 Scupr::Application.routes.draw do
 
-  get "business/create"
+
   get 'ads' => "ads#index"
   get 'ads/:id' => "ads#show"
+  get 'tags/:tag' => 'ads#index', as: :tag
+  get "business/create"
   get 'business/:id' => "business#show"
   post 'business/new' => "business#create"
-  
   post 'payment' => "charges#create"
-  get 'tags/:tag'=> 'ads#index', as: :tag
+  get 'pass/:business_id' => "business#create_pass"
+  get 'coupon/:business_id' => "business#create_coupon"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
