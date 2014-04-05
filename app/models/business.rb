@@ -69,36 +69,4 @@ class Business < ActiveRecord::Base
     response = request.execute
     JSON.parse(response)
   end
-  # def pass_for(ad)
-    
-  #   raw_pass_path         = Dir.mktmpdir
-  #   FileUtils.cp_r(Dir['app/assets/certificate/StoreCard.raw/*'], raw_pass_path)
-
-  #   # the below is breaking json file for sign_pass!
-  #   pass = JSON.parse(File.open("app/assets/certificate/pass.json").read)
-  #   pass["locations"].first["longitude"] = lng
-  #   pass["locations"].first["latitude"] = lat
-  #   pass["organizationName"] = name
-  #   pass["logoText"] = name
-  #   tempfile = Tempfile.new(['Yonder', '.json'], raw_pass_path)
-  #   tempfile.binmode
-  #   tempfile.write JSON.pretty_generate(pass)
-  #   tempfile.close
-
-  #   puts raw_pass_path
-  #   puts  "raw_pass_path ***"*50
-
-  #   certificate_path      = "app/assets/certificate/Certificates.p12"
-  #   wwdr_certificate_path = "app/assets/certificate/AWDRCA.pem"
-  #   certificate_password  = ENV['certificate_password']
-  #   pass_output_path      = Dir.mktmpdir+"/new.pkpass"
-    
-  #   puts pass_output_path
-  #   puts  "pass_output_path ***"*50
-
-  #   pass_signer = SignPass.new(raw_pass_path, certificate_path, certificate_password, wwdr_certificate_path, pass_output_path)
-  #   pass_signer.sign_pass!
-
-  #   return pass_output_path
-  # end
 end

@@ -20,7 +20,6 @@ class BusinessController < ApplicationController
         caption: params["ad-caption"], 
         image: params["file"],
         business_id: @business.id 
-        # pass: @business.pass_for(@ad)
       )
     else 
       render :json => { :business => @business.errors.messages }
