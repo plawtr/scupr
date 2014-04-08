@@ -11,6 +11,8 @@ class BusinessController < ApplicationController
       phone: params["business-phone"]
     )
 
+    @business_user = BusinessUser.find_or_create_by(uuid: params["business-uuid"], business_id: params["business-id"])
+
     @ad = @business.ads.first || Ad.new()
 
     if @business.save

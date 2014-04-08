@@ -1,5 +1,6 @@
 class Business < ActiveRecord::Base
 	has_many :ads
+  has_many :business_users
 
 	acts_as_mappable :default_units => :kms,
                    :default_formula => :sphere,
