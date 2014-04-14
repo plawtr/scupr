@@ -10,7 +10,8 @@ Scupr::Application.routes.draw do
   post 'payment' => "charges#create"
   get 'pass/:business_id' => "business#create_pass"
   get 'coupon/:business_id' => "business#create_coupon"
-
+  
+  get 'business/:id/:uuid' => "business#show", as: :uuid
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
