@@ -37,7 +37,11 @@ class BusinessController < ApplicationController
   def show  
       @business = Business.find_by(id: params["id"])
       @uuids = @business.business_users.map{|u| u.uuid}
-      @uuids.include?(params[:uuid]) ? render :json => { :business => @business.as_json } : render status: :unauthorized
+      if @uuids.include?(params[:uuid]) 
+        render :json => { :business => @business.as_json } 
+      else
+        render :json => {} , status: :unauthorized
+      end
   end
 
   def create_pass
